@@ -6,5 +6,4 @@
 
 <p>React-CSS-JavaScript kullanıldı. </br> Responsive yapı kullanıldı</p>
 
-![](gif/screen-1.gif)
-# react-youtube-clone
+![](public/gif/screen-1.gif)
