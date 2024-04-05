@@ -2,7 +2,9 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Feed from "./pages/Feed";
-import Sidebar from "./components/Sidebar";
+import VideoDetail from "./pages/VideoDetail";
+import Results from "./pages/Results";
+import Undefined from "./pages/Undefined";
 
 const App = () => {
   return (
@@ -10,6 +12,9 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Feed />} />
+        <Route path="/watch" element={<VideoDetail />} />
+        <Route path="/results" element={<Results />} />
+        <Route path="/*" element={<Undefined />} />
       </Routes>
     </BrowserRouter>
   );

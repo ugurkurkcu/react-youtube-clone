@@ -24,3 +24,27 @@ body {
   background: #808080;
   border-radius: 5px;
 }
+.detail-page {
+  display: grid;
+  grid-template-columns: auto 400px;
+}
+.row {
+  display: grid;
+  grid-template-columns: 120px auto;
+}
+.row .v-pic {
+  object-fit: fill !important;
+  height: auto !important;
+}
+.row .c-pic {
+  display: none;
+}
+.row .text {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .detail-page {
+    grid-template-columns: 1fr;
+  }
+}

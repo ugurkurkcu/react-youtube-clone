@@ -1,20 +1,22 @@
 import millify from "millify";
 import { useState } from "react";
 import { LuDot } from "react-icons/lu";
+import { useNavigate, useNavigation } from "react-router-dom";
 
-const VideoCard = ({ video }) => {
+const VideoCard = ({ video, isRow }) => {
   const [isHover, setIsHover] = useState(false);
-  console.log(video);
+  const navigate = useNavigate();
 
   return (
     <div
+      onClick={() => navigate(`/watch?v=${video.videoId}`)}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
-      className="cursor-pointer"
+      className={`cursor-pointer items-center ${isRow ? "row" : ""}`}
     >
       <div>
         <img
-          className="rounded-lg w-full h-full"
+          className="v-pic rounded-lg w-full h-full"
           src={
             isHover && video.richThumbnail
               ? video.richThumbnail[0].url
@@ -26,20 +28,23 @@ const VideoCard = ({ video }) => {
       <div className="flex gap-4 mt-5">
         <div>
           <img
-            className="w-14 h-14 rounded-full"
-            src={video.channelThumbnail[0]?.url}
+            className="c-pic w-14 h-14 rounded-full"
+            src={video.channelThumbnail && video.channelThumbnail[0]?.url}
             alt=""
           />
         </div>
         <div>
-          <h4 className="font-bold line-clamp-2">{video.title}</h4>
-          <h5>{video.channelTitle}</h5>
-          <div className="flex gap-3">
+          <h5 className="font-thin line-clamp-2 text-sm">{video.title}</h5>
+          <h6 className="text-sm">{video.channelTitle}</h6>
+          <div className="detail flex gap-3">
             <p className="flex gap-1">
-              <span>{millify(video.viewCount)} Görüntüleme</span>
+              <p className="text-sm">
+                {millify(video.viewCount)}{" "}
+                <span className="text">Görüntüleme</span>
+              </p>
               <LuDot size={24} />
             </p>
-            <p>{video.publishedTimeText}</p>
+            <p className="text-sm">{video.publishedTimeText}</p>
           </div>
         </div>
       </div>
