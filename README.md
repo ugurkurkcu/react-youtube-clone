@@ -1,4 +1,4 @@
-<h1>ROUTE-Store is a HTML-CSS-REACT Project</h1>
+<h1>Youtube-Clone is a JAVASCRIPT-CSS-REACT Project</h1>
 
 <hr>
 
@@ -7,3 +7,5 @@
 <p>React-CSS-JavaScript kullanıldı. </br> Responsive yapı kullanıldı</p>
 
 ![](public/gif/screen-1.gif)
+
+![](public/gif/screen-2.gif)
